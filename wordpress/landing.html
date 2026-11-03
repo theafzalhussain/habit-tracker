@@ -1,0 +1,184 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     HECTOR HABIT — WordPress landing page (paste-ready)
+     Use: Pages → Add New → "Hector Habit" → Custom HTML block → paste everything
+     below. Then point the CTAs at {APP}/login by replacing every
+     https://APP-DOMAIN/login placeholder. No WordPress plugin, no habit data here.
+     Recommended theme: a blank/minimal one (Twenty Twenty-Four with the
+     "Blank" template is fine). Set the site title to "Hector Habit".
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap">
+
+<style>
+  .hh-landing{
+    --bg:#08090b; --card:#131418; --card2:#18191e; --raised:#111216; --line:#26282f; --line-soft:#1b1d22;
+    --text:#f4efe6; --text2:#d2ccc1; --muted:#a29d93; --faint:#7a756c;
+    --accent:#e3a857; --accent2:#f6d9a2; --accent3:#b47a2e; --ink:#1b1206;
+    --soft:rgba(227,168,87,.11); --glow:rgba(227,168,87,.24); --hl:rgba(255,255,255,.055);
+    position:relative; isolation:isolate;
+    background:
+      radial-gradient(900px 520px at 12% -8%, rgba(227,168,87,.10), transparent 62%),
+      radial-gradient(760px 480px at 100% 0%, rgba(180,122,46,.06), transparent 60%),
+      var(--bg);
+    color:var(--text); min-height:100vh;
+    font-family:"Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size:15px; line-height:1.55; padding:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .hh-landing *{box-sizing:border-box}
+  .hh-wrap{max-width:1120px; margin:0 auto; padding:1.4rem 20px 3rem}
+  .hh-nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.4rem 0 1rem}
+  .hh-brand{display:inline-flex; align-items:center; gap:.7rem; font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:1.45rem; letter-spacing:-.02em; color:var(--text)}
+  .hh-brand em{font-style:italic; font-weight:500; color:var(--accent)}
+  .hh-mark{display:inline-grid; place-items:center; width:36px; height:36px; padding:6px; border-radius:12px; color:var(--accent);
+    background:linear-gradient(145deg,#1e2026,var(--raised)); border:1px solid rgba(227,168,87,.3);
+    box-shadow:inset 0 1px 0 var(--hl), 0 6px 18px -6px var(--glow)}
+  .hh-mark svg{display:block; width:100%; height:100%}
+  .hh-hero{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:3rem; align-items:center; padding:3.5rem 0 3rem}
+  .hh-pill{display:inline-flex; align-items:center; gap:.55rem; padding:.34rem .85rem .34rem .65rem; border:1px solid var(--line); border-radius:999px;
+    background:rgba(19,20,24,.7); color:var(--muted); font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase}
+  .hh-dot{width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px var(--soft), 0 0 12px var(--glow)}
+  .hh-h1{font-family:"Fraunces", Georgia, "Times New Roman", serif; font-weight:500;
+    font-size:clamp(2.5rem, 6vw, 4.4rem); line-height:.98; letter-spacing:-.03em; margin:1.3rem 0 1.1rem; color:var(--text)}
+  .hh-h1 em{font-style:italic; font-weight:400; color:var(--accent);
+    background:linear-gradient(120deg,var(--accent2),var(--accent) 50%,var(--accent3)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+  .hh-sub{font-size:1.1rem; color:var(--muted); max-width:46ch; line-height:1.65; margin:0}
+  .hh-cta{display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2rem}
+  .hh-btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-height:50px; padding:.7rem 1.5rem; border-radius:999px;
+    background:linear-gradient(180deg,var(--accent2) -40%,var(--accent) 55%,var(--accent3) 160%); border:1px solid #c98f3f;
+    color:var(--ink); font-weight:700; font-size:.95rem; text-decoration:none;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 8px 28px -8px rgba(227,168,87,.45); transition:transform .14s ease, filter .2s ease}
+  .hh-btn:hover{filter:brightness(1.06); transform:translateY(-1px); text-decoration:none; color:var(--ink)}
+  .hh-btn-ghost{display:inline-flex; align-items:center; min-height:50px; padding:.7rem 1.4rem; border-radius:999px; border:1px solid var(--line);
+    color:var(--text); font-weight:600; font-size:.95rem; text-decoration:none; transition:border-color .2s ease, background .2s ease}
+  .hh-btn-ghost:hover{border-color:rgba(227,168,87,.55); background:var(--card2); color:var(--text); text-decoration:none}
+  .hh-visual{padding:1.2rem; border-radius:22px; border:1px solid rgba(227,168,87,.35);
+    background:linear-gradient(170deg,var(--card2),var(--card) 45%,var(--raised));
+    box-shadow:inset 0 1px 0 var(--hl), 0 30px 70px -18px rgba(0,0,0,.8), 0 40px 120px -40px var(--glow);
+    transform:perspective(1400px) rotateY(-6deg) rotateX(3deg)}
+  .hh-vhead{display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem}
+  .hh-vtitle{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:1.05rem}
+  .hh-streak{font-family:"Geist Mono", ui-monospace, monospace; font-size:.72rem; color:var(--accent); padding:.2rem .55rem; border-radius:999px; border:1px solid rgba(227,168,87,.5); background:var(--soft)}
+  .hh-row{display:grid; grid-template-columns:96px repeat(7,1fr); gap:.35rem; align-items:center; margin-bottom:.4rem}
+  .hh-row > span:first-child{font-size:.76rem; color:var(--text2); font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .hh-row i{display:block; aspect-ratio:1; border-radius:7px; border:1px solid var(--line); background:var(--raised)}
+  .hh-row i.on{background:linear-gradient(180deg,var(--accent2) -50%,var(--accent) 55%,var(--accent3) 170%); border-color:var(--accent)}
+  .hh-row i.miss{border-style:dashed; background:transparent; border-color:rgba(240,106,106,.45)}
+  .hh-row i.off{opacity:.3; border-style:dashed; background:transparent}
+  .hh-days > span{font-size:.58rem; color:var(--faint); text-align:center; font-weight:700; letter-spacing:.08em}
+  .hh-intro{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.9rem; margin:1rem 0 3rem}
+  .hh-intro p{margin:0; padding:1.2rem 1.25rem; border:1px solid var(--line); border-radius:18px; color:var(--text2);
+    background:linear-gradient(180deg,var(--card),var(--raised)); box-shadow:inset 0 1px 0 var(--hl)}
+  .hh-intro p::before{content:""; display:block; width:28px; height:2px; margin-bottom:.9rem; border-radius:2px; background:linear-gradient(90deg,var(--accent),transparent)}
+  .hh-price{display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:1.2rem 2rem; max-width:760px; margin:0 auto 1rem;
+    padding:2rem 2.1rem; border-radius:22px; border:1px solid rgba(227,168,87,.4);
+    background:radial-gradient(ellipse 70% 90% at 100% 0%, var(--soft), transparent 60%), linear-gradient(170deg,var(--card2),var(--card) 45%,var(--raised));
+    box-shadow:inset 0 1px 0 var(--hl), 0 30px 70px -18px rgba(0,0,0,.8)}
+  .hh-eyebrow{display:block; color:var(--faint); font-size:.64rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase}
+  .hh-price .num{font-family:"Fraunces", Georgia, serif; font-weight:500; font-size:3.2rem; line-height:1; letter-spacing:-.04em; margin:.5rem 0 .4rem; color:var(--accent)}
+  .hh-price .num small{font-family:"Geist", system-ui, sans-serif; font-size:.95rem; font-weight:500; color:var(--muted); letter-spacing:0}
+  .hh-price p{color:var(--muted); margin:0}
+  .hh-price-cta{display:grid; justify-items:center; gap:.6rem; text-align:center}
+  .hh-small{font-size:.8rem; color:var(--faint)}
+  .hh-foot{margin-top:3.5rem; padding-top:1.6rem; border-top:1px solid var(--line-soft); font-size:.8rem; color:var(--faint); text-align:center}
+  .hh-quote{font-family:"Fraunces", Georgia, serif; font-style:italic; font-size:1.2rem; font-weight:400; color:var(--muted); margin:0 0 .8rem}
+  .hh-foot a{color:var(--accent); text-decoration:none}
+  @media (max-width:900px){
+    .hh-hero{grid-template-columns:1fr; gap:2.4rem; padding-top:2.2rem}
+    .hh-visual{transform:none; max-width:520px}
+    .hh-intro{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .hh-price{grid-template-columns:1fr; padding:1.6rem}
+    .hh-price-cta{justify-items:stretch}
+    .hh-price-cta .hh-btn{width:100%}
+  }
+  @media (max-width:480px){
+    .hh-wrap{padding-inline:16px}
+    .hh-row{grid-template-columns:74px repeat(7,1fr); gap:.28rem}
+    .hh-cta a{flex:1 1 auto}
+  }
+  @media (prefers-reduced-motion:reduce){ .hh-landing *{transition:none !important} }
+</style>
+
+<div class="hh-landing">
+  <div class="hh-wrap">
+    <div class="hh-nav">
+      <div class="hh-brand">
+        <span class="hh-mark" aria-hidden="true">
+          <svg viewBox="0 0 28 28">
+            <rect x="1.5" y="1.5" width="25" height="25" rx="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="6" y="6" width="6" height="6" rx="2" fill="currentColor"/>
+            <rect x="16" y="6" width="6" height="6" rx="2" fill="currentColor" opacity=".5"/>
+            <rect x="6" y="16" width="6" height="6" rx="2" fill="currentColor" opacity=".5"/>
+            <rect x="16" y="16" width="6" height="6" rx="2" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>Hector <em>Habit</em></span>
+      </div>
+      <!-- ▼▼ REPLACE every href="https://APP-DOMAIN/login" with your app URL, e.g.
+           https://habits.yourdomain.com/login  (or /app/login for a subfolder) ▼▼ -->
+      <div style="display:flex;align-items:center;gap:.6rem">
+        <a class="hh-btn-ghost" style="min-height:40px; padding:.45rem 1rem; font-size:.85rem" href="https://APP-DOMAIN/login">Login</a>
+        <a class="hh-btn" style="min-height:40px; padding:.45rem 1rem; font-size:.85rem" href="https://APP-DOMAIN/signup">Sign up</a>
+      </div>
+    </div>
+
+    <div class="hh-hero">
+      <div>
+        <span class="hh-pill"><span class="hh-dot"></span> Private habit grid · ₹199 / year</span>
+        <h1 class="hh-h1">The day you skip is the day you <em>do not get back.</em></h1>
+        <p class="hh-sub">A missed box is not a small thing. It is the receipt of a decision you already made.</p>
+        <div class="hh-cta">
+          <a class="hh-btn" style="min-height:52px;padding:.85rem 1.85rem;font-size:1.02rem;border-radius:14px" href="https://APP-DOMAIN/signup">Start trial →</a>
+        </div>
+      </div>
+
+      <div class="hh-visual" aria-hidden="true">
+        <div class="hh-vhead"><span class="hh-vtitle">This week</span><span class="hh-streak">🔥 12d</span></div>
+        <div class="hh-row hh-days"><span></span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+        <div class="hh-row"><span>Deep Work</span><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <div class="hh-row"><span>Gym</span><i class="on"></i><i class="on"></i><i class="miss"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i></div>
+        <div class="hh-row"><span>Hydration</span><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <div class="hh-row"><span>Clean Fuel</span><i class="on"></i><i class="miss"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i></div>
+        <div class="hh-row"><span>Read</span><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div class="hh-intro">
+      <p>A private habit grid for one person — you.</p>
+      <p>If the list already exists in your head or on paper, this keeps the score.</p>
+      <p>Streak, XP, day / week / month, four themes, no noise.</p>
+    </div>
+
+    <div class="hh-price">
+      <div>
+        <span class="hh-eyebrow">Annual membership</span>
+        <div class="num">₹199 <small>/ year</small></div>
+        <p>3-day trial. Then ₹199 once a year.</p>
+      </div>
+      <div class="hh-price-cta">
+        <a class="hh-btn" href="https://APP-DOMAIN/login">Start trial</a>
+        <p class="hh-small">Affiliate coupons apply at checkout.</p>
+      </div>
+    </div>
+
+    <div class="hh-foot">
+      <p class="hh-quote">“Obsession is a word the lazy use to describe the dedicated.”</p>
+      <p>Hector Habit · Afzal Hussain · <a href="https://APP-DOMAIN/login">Login</a></p>
+    </div>
+  </div>
+</div>
+
+<!--
+  MENU / LINK NOTE
+  ---------------
+  • Add a menu item named "Start trial" pointing at  {APP}/login
+    (Appearance → Menus → Custom Link).
+  • Add a second item named "Sign in" pointing at the same URL.
+  • There is no signup page and no signup form anywhere on purpose:
+    the app issues credentials, WordPress never does.
+  • Keep all habit data in the PHP app. WordPress is the signboard, not the vault.
+-->

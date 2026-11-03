@@ -1,0 +1,82 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     HECTOR HABIT — WordPress landing page (paste-ready)
+     Use: Pages → Add New → "Hector Habit" → Custom HTML block → paste everything
+     below. Then point the CTA at {APP}/login by replacing the placeholder URL
+     on line 41 (it appears once). No WordPress plugin, no habit data here.
+     Recommended theme: a blank/minimal one (Twenty Twenty-Four with the
+     "Blank" template is fine). Set the site title to "Hector Habit".
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<style>
+  .hh-landing{
+    --bg:#0b0c0f; --card:#14151b; --line:#262832; --text:#eceae5;
+    --muted:#9a998f; --faint:#6b6a63; --accent:#e8a54b;
+    background:var(--bg); color:var(--text); min-height:100vh;
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size:15px; line-height:1.5; padding:0;
+  }
+  .hh-landing *{box-sizing:border-box}
+  .hh-wrap{max-width:780px; margin:0 auto; padding:3rem 16px 4rem;
+    background:radial-gradient(1000px 480px at 50% -12%, rgba(232,165,75,.12), transparent 70%)}
+  .hh-brand{font-family:"Fraunces", Georgia, "Times New Roman", serif; font-weight:600; font-size:1.6rem; letter-spacing:-.015em}
+  .hh-brand span{color:var(--accent)}
+  .hh-h1{font-family:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-weight:700;
+    font-size:clamp(2rem, 7vw, 3.3rem); line-height:1.15; letter-spacing:-.02em; margin:1.6rem 0 .8rem}
+  .hh-h1 em{font-style:normal; color:var(--accent)}
+  .hh-sub{font-size:1.05rem; color:var(--muted); max-width:46ch}
+  .hh-intro{color:var(--muted); max-width:54ch; margin:2rem 0}
+  .hh-intro p{margin:0 0 .35rem}
+  .hh-price{border:1px solid var(--line); background:var(--card); border-radius:14px; padding:1.2rem; margin:1.6rem 0; max-width:420px}
+  .hh-price .num{font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:2.2rem; letter-spacing:-.02em}
+  .hh-price .num small{font-size:.9rem; color:var(--muted); font-family:inherit}
+  .hh-price p{color:var(--muted); margin:.4rem 0 1rem}
+  .hh-btn{display:inline-block; background:var(--accent); color:#17130a; font-weight:600;
+    padding:.72rem 1.1rem; border-radius:9px; text-decoration:none}
+  .hh-btn:hover{filter:brightness(1.06); text-decoration:none; color:#17130a}
+  .hh-small{font-size:.8rem; color:var(--faint)}
+  .hh-foot{margin-top:3rem; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.8rem; color:var(--faint)}
+  .hh-quote{font-family:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size:1.05rem; font-weight:500; color:var(--muted); margin:0 0 .6rem}
+  .hh-foot a{color:var(--accent)}
+</style>
+
+<div class="hh-landing">
+  <div class="hh-wrap">
+    <div class="hh-brand">Hector <span>Habit</span></div>
+
+    <h1 class="hh-h1">The day you skip is the day you <em>do not get back.</em></h1>
+    <p class="hh-sub">A missed box is not a small thing. It is the receipt of a decision you already made.</p>
+
+    <div class="hh-intro">
+      <p>A private habit grid for one person — you.</p>
+      <p>If the list already exists in your head or on paper, this keeps the score.</p>
+      <p>Streak, XP, day / week / month, four themes, no noise.</p>
+    </div>
+
+    <div class="hh-price">
+      <div class="num">₹199 <small>/ year</small></div>
+      <p>3-day trial. Then ₹199 once a year.</p>
+
+      <!-- ▼▼ REPLACE the href below with your app URL, e.g.
+           https://habits.yourdomain.com/login  (or /app/login for a subfolder) ▼▼ -->
+      <a class="hh-btn" href="https://APP-DOMAIN/login">Start trial</a>
+
+      <p class="hh-small" style="margin:.7rem 0 0">Affiliate coupons apply at checkout.</p>
+    </div>
+
+    <div class="hh-foot">
+      <p class="hh-quote">“Obsession is a word the lazy use to describe the dedicated.”</p>
+      <p>Hector Habit · Afzal Hussain · <a href="https://APP-DOMAIN/login">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+<!--
+  MENU / LINK NOTE
+  ---------------
+  • Add a menu item named "Start trial" pointing at  {APP}/login
+    (Appearance → Menus → Custom Link).
+  • Add a second item named "Sign in" pointing at the same URL.
+  • There is no signup page and no signup form anywhere on purpose:
+    the app issues credentials, WordPress never does.
+  • Keep all habit data in the PHP app. WordPress is the signboard, not the vault.
+-->

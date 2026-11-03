@@ -1,0 +1,35 @@
+# Hector Habit — shared hosting (cPanel / Apache) front controller.
+# Point the domain or subdomain's document root at this /public folder,
+# or drop this whole app in a subfolder and it still works (paths are derived
+# from the request, no config needed).
+
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Never rewrite real files (assets, icons).
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Everything else goes through the front controller.
+  RewriteRule ^ index.php [L]
+</IfModule>
+
+# Do not serve the SQL or source folders if someone points the root here by mistake.
+<IfModule mod_alias.c>
+  RedirectMatch 404 /\.git
+</IfModule>
+
+<FilesMatch "\.(sql|md|php\.dist)$">
+  Require all denied
+</FilesMatch>
+
+# Small hardening (harmless on hosts that ignore them).
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "same-origin"
+</IfModule>

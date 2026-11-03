@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copy this file to src/config.local.php and fill it in when you cannot set
+ * real environment variables (shared hosting / cPanel often cannot).
+ *
+ * src/config.local.php is git-ignored. Never commit it.
+ */
+return [
+    'HECTOR_DB_HOST' => '127.0.0.1',
+    'HECTOR_DB_PORT' => '3306',
+    'HECTOR_DB_NAME' => 'hector_habit',
+    'HECTOR_DB_USER' => 'hector',
+    'HECTOR_DB_PASS' => 'change-me',
+
+    // Leave empty to auto-detect (works in subfolders). Set it if behind a proxy.
+    // 'APP_BASE_URL' => 'https://habits.example.com',
+
+    // Optional Ashna API key. Keep this server-side; never put it in browser JS.
+    // 'ASHNA_API_KEY' => 'paste-a-rotated-key-here',
+
+    // Razorpay TEST MODE — paste test credentials from Razorpay Dashboard.
+    // Use key IDs beginning with rzp_test_; keys stay server-side in this file.
+    'RAZORPAY_MODE' => 'test',
+    // 'RAZORPAY_KEY_ID'     => 'rzp_test_xxxxxxxxxxxxx',
+    // 'RAZORPAY_KEY_SECRET' => 'your_test_key_secret',
+    // 'RAZORPAY_WEBHOOK_SECRET' => 'your_test_webhook_secret',
+
+    // 'HECTOR_ADMIN_PASSWORD' => 'only-if-you-must', // seed.php prefers the env var
+    // 'HECTOR_TIMEZONE' => 'Asia/Kolkata',
+];
